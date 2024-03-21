@@ -60,6 +60,9 @@ jobs:
       - name: Make zip file
         run: |
           mkdir deploy
+          cp ./appspec.yml ./deploy/
+          cp ./Dockerfile ./deploy/
+          cp ./scripts/*.sh ./deploy/
           cp ./build/libs/*.jar ./deploy/
           zip -r -qq -j ./spring-build.zip ./deploy
 
@@ -81,5 +84,10 @@ jobs:
             --region ap-northeast-2 \
             ./spring-build.zip s3://tcat-spring
 
+ - name: Code Deploy
+        run: aws deploy create-deployment --application-name RealLastZinMakFinal
+          --deployment-config-name CodeDeployDefault.OneAtATime
+          --deployment-group-name RealLastZinMakFinal123
+          --s3-location bucket=tcat-spring,bundleType=zip,key=spring-build.zip
       
      
