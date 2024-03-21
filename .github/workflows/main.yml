@@ -7,9 +7,9 @@ on:
 
 env:
   PROJECT_NAME: zooTopic
-  BUCKET_NAME: cicdzootopic
-  CODE_DEPLOY_APP_NAME: asdasd
-  DEPLOYMENT_GROUP_NAME: lastlastzoo
+  BUCKET_NAME: tcat-spring
+  CODE_DEPLOY_APP_NAME: RealLastZinMakFinal
+  DEPLOYMENT_GROUP_NAME: RealLastZinMakFinal123
 
 jobs:
   build:
