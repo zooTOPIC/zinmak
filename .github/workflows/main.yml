@@ -82,8 +82,8 @@ jobs:
           aws s3 cp \
             --region ap-northeast-2 \
             ./spring-build.zip s3://tcat-spring
-
- - name: Code Deploy
+            
+      - name: Code Deploy
         run: aws deploy create-deployment --application-name RealLastZinMakFinal
           --deployment-config-name CodeDeployDefault.OneAtATime
           --deployment-group-name RealLastZinMakFinal123
